@@ -89,15 +89,14 @@ In the function body, create a variable to store a random number ranging from ze
 Lastly, the function should return a random quote object using the random number variable above and bracket notation on the quotes array.
 ***/
 
-function getRandomQuote(){
-    const getRandomQuote= Math.floor(Math.random()*quotes.length);
-    for (var i = 0; i< quotes.length; i++) {
-      var randomQuote = quotes[i];
-      return randomQuote;
+function getRandomQuote (){
+  const randomNumber = Math.floor(Math.random() * quotes.length);
+  return quotes[randomNumber];
+};
+
+getRandomQuote();
 
     //console.log(getRandomQuote);
-}
-}
 
 
 
@@ -116,22 +115,27 @@ Create another variable to store the HTML string. Set it equal to a string conta
 ***/
 
 function printQuote() {
-  const randomQuote = getRandomQuote();
+  let randomQuote = getRandomQuote();
 
-  let html = `
-  <p class="quote" > ${randomQuote.quote} </p>
-  <p class="source"> ${randomQuote.source} `;
+  let html = `<p class="quote" > ${randomQuote.quote} </p>
+                <p class="source"> ${randomQuote.source} `
 
   if (randomQuote.citation) {
-    html += `<span  class="citation" >${randomQuote.citation}</span> `;
-  }
+    html += `<span  class="citation" >${randomQuote.citation} </span> `
+  };
 
-  if (randomQuote.year) html += `<span class="year">${randomQuote.year}</span>`;
+  if (randomQuote.year) {
+    
+  html += `<span class="year">${randomQuote.year} </span>`
+
+  };
 
   html += ` </p> `;
 
 
   document.getElementById("quote-box").innerHTML = html;
+
+}
 
 /***
  * click event listener for the print quote button
@@ -140,4 +144,4 @@ function printQuote() {
 
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
-}
+
