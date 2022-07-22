@@ -29,7 +29,6 @@ var quotes = [
     source: 'Plankton',
     citation: 'Spongebob Squarepants,The Algaes Always Greener ',
     year: '2002',
-
   },
   {
     quote: "The inner machinations of my mind are an enigma.",
@@ -69,7 +68,7 @@ var quotes = [
     year: '2001',
   },
   
- 
+ console.log()
 
 ];
 
